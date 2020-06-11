@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:paddingTop="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/bt_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/connect"
+            android:background="#40000000"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="5dp"/>
+
+        <Button
+            android:id="@+id/bt_discoverable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="discoverable"
+            android:layout_gravity="center"
+            android:text="@string/discoverable"
+            android:background="#40000000"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Left Wheel Control"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:paddingLeft="60dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="Turn Left"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/bt_left"/>
+
+                <io.github.controlwear.virtual.joystick.android.JoystickView
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/joystickView_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="32dp"
+                    android:background="@drawable/joypad_background"
+                    custom:JV_buttonColor="@color/colorPrimary"
+                    custom:JV_fixedCenter="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView_angle_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0°"
+                    android:textColor="@color/colorPrimary"
+                    android:background="#40000000"/>
+
+
+                <TextView
+                    android:id="@+id/textView_strength_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_angle_left"
+                    android:text="0%"
+                    android:textColor="@color/colorPrimary"
+                    android:background="#40000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:gravity="right">
+
+                <ProgressBar
+                    android:id="@+id/progressBar_leftUp"
+                    android:layout_width="12dip"
+                    android:layout_height="match_parent"
+                    style="@style/Widget.ProgressBar.Vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar_leftDown"
+                    android:layout_width="12dip"
+                    android:layout_height="match_parent"
+                    style="@style/Widget.ProgressBar.VerticalReverse"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <ProgressBar
+                    android:id="@+id/progressBar_rightUp"
+                    android:layout_width="12dip"
+                    android:layout_height="match_parent"
+                    style="@style/Widget.ProgressBar.Vertical"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar_rightDown"
+                    android:layout_width="12dip"
+                    android:layout_height="match_parent"
+                    style="@style/Widget.ProgressBar.VerticalReverse"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView_angle_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0°"
+                    android:textColor="@color/colorPrimary"
+                    android:background="#40000000"/>
+
+
+                <TextView
+                    android:id="@+id/textView_strength_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/textView_angle_right"
+                    android:text="0%"
+                    android:textColor="@color/colorPrimary"
+                    android:background="#40000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Right Wheel Control"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:paddingLeft="60dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@android:color/transparent"
+                    android:text="Turn Right"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/bt_right"/>
+
+                <io.github.controlwear.virtual.joystick.android.JoystickView
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/joystickView_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_margin="32dp"
+                    android:background="@drawable/joypad_background"
+                    custom:JV_buttonColor="@color/colorPrimary"
+                    custom:JV_fixedCenter="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

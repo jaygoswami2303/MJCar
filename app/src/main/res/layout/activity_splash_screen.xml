@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ambush.mjcar.SplashScreenActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/black"
+    android:weightSum="30">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/splash_background"
+            android:layout_weight="29"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Developed By :\nJay Goswami."
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="19dp"
+            android:gravity="center|bottom"
+            android:layout_weight="1"/>
+
+</LinearLayout>
